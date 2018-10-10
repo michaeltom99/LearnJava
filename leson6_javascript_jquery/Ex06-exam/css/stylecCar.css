@@ -1,0 +1,138 @@
+.container-new{
+	margin-top: 100px;
+}
+#Duyet{
+	margin-left: : 50px;
+}
+.bordered{
+	position: relative;
+	bottom: 15px;
+}
+.title-list{
+	font-size: 	20px;
+	font-weight: 	2px;			 
+}
+.font-blue{
+	color: 	#0099FF;
+	text-transform: uppercase;
+}
+.actions{
+	margin-top: 10px;
+	margin-left: 30px;
+}
+.modal-dialog {
+    width: 900px;
+    margin: 30px auto;
+}
+.col-md-2{
+	position: relative;
+	top: 8px;
+}
+.row{
+	margin-bottom: 30px;
+}
+.checkbox-modal{
+	position: relative;
+	top: 8px;
+}
+select {
+    width: 200px;
+    height: 34px;
+}
+.delete-modal{
+	width: 600px;
+    margin: 30px auto;
+}
+.row-delete {
+    text-align: center;
+    font-weight: 2px;
+    font-size: 20px;
+    position: relative;
+    top: 18px;
+    left: 50px;
+    color: #EE0000;
+}
+.row.center {
+   display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+button.btn.btn-primary.btn-xs.muabh {
+    height: 30px;
+}
+.container-new{
+	margin-top: 100px;
+}
+#Duyet{
+	margin-left: : 50px;
+}
+.bordered{
+	position: relative;
+	bottom: 15px;
+}
+.title-list{
+	font-size: 	20px;
+	font-weight: 	2px;			 
+}
+.font-blue{
+	color: 	#0099FF;
+	text-transform: uppercase;
+}
+.actions{
+	margin-top: 10px;
+	margin-left: 30px;
+}
+.modal-dialog {
+    width: 900px;
+    margin: 30px auto;
+}
+.col-md-2{
+	position: relative;
+	top: 8px;
+}
+.row{
+	margin-bottom: 30px;
+}
+.checkbox-modal{
+	position: relative;
+	top: 8px;
+}
+select {
+    width: 200px;
+    height: 34px;
+}
+.delete-modal{
+	width: 600px;
+    margin: 30px auto;
+}
+.row-delete {
+    text-align: center;
+    font-weight: 2px;
+    font-size: 20px;
+    position: relative;
+    top: 18px;
+    left: 50px;
+    color: #EE0000;
+}
+.row.logout {
+    float: right;
+}
+.col-md-8.tag1 {
+    position: relative;
+    right: 11px;
+}
+#btn_add_tag {
+    position: relative;
+    bottom: 8px;
+}
+.row.tag {
+    position: relative;
+    bottom: 28px;
+}
+div#tagName {
+    position: relative;
+    bottom: 40px;
+}
+i.glyphicon.glyphicon-remove-sign {
+    color: #3399FF;
+}

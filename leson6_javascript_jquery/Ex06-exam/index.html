@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Trang chủ</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <script src="jquery/jquery.js"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+        <!-- Custom styles for this template -->
+        <link href="css/simple-sidebar.css" rel="stylesheet">
+        <link href="css/stylecCar.css" rel="stylesheet">        
+        <script src="javascript/js.js"></script>
+        <script src="javascript/jq.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="index.html">
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">Danh mục tin tức</a>
+                    </li>
+                    <li>
+                        <a href="CarManage.html">Danh mục ô tô</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle"><i class="glyphicon glyphicon-align-justify"></i></a>
+                        </div>
+                        <!-- Content main -->
+                        <div class="col-md-11">
+                            <div class="row logout">
+                                <a class="btn btn-success" href="login.html" >
+                                    <i class="fa fa-refresh"></i>Đăng xuất
+                                </a>
+                            </div>
+                            <!--body List -->
+                            <div class="row">
+                                <div class="container-fluid">
+                                <div class="container container-new">
+                                    <div class="portlet light bordered">
+                                        <div class="portlet-title">
+                                            <div class="caption font-dark">
+                                                <i class="glyphicon glyphicon-cog" style="width: 20px"></i>
+                                                <span class="title-list font-blue">Danh mục bài viết</span>
+                                            </div>
+                                            <div class="actions">
+                                                <a class="btn btn-success" id="popup_insert" data-toggle="modal" >
+                                                    <i class="fa fa-refresh"></i>Thêm
+                                                </a>
+                                                <a class="btn btn-warning" id="check_all" >
+                                                    <i class="fa fa-refresh"></i>Chọn tất cả
+                                                </a>
+                                                <a class="btn btn-warning" id="uncheck_all" >
+                                                    <i class="fa fa-refresh"></i>Bỏ tất cả
+                                                </a>
+                                                <a class="btn btn-primary" id="appraval_all" >
+                                                    <i class="fa fa-refresh"></i>Duyệt
+                                                </a>
+                                                <a class="btn btn-primary" id="block_all" >
+                                                    <i class="fa fa-refresh"></i>Chặn
+                                                </a>
+                                                <a class="btn btn-primary" id="delete_all" >
+                                                    <i class="fa fa-refresh"></i>Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table id="datatable" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" style="width:1%">STT</th>
+                                                <th class="text-center" style="width:1%">Chọn</th>
+                                                <th class="text-center" style="width:20%">Tiêu đề</th>
+                                                <th class="text-center" style="width:10%">Danh mục</th>
+                                                <th class="text-center" style="width:5%">Lịch đăng</th>
+                                                <th class="text-center" style="width:5%">T.thái</th>      <th class="text-center" style="width:20%">Thao tác</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr clas="tr-body">
+                                                <td title="STT"  class="STT">1</td>
+                                                <td title="CHON" class="text-center">
+                                                    <input type="checkbox" class="cbx_chose"  aria-label="Checkbox for following text input">  
+                                                      
+                                                </td>
+                                                <td title="TD" class="post-title">Tiêu đề 1</td>
+                                                <td title="DM" class="list">Danh mục 1</td>
+                                                <td title="LD" class="date">20/1/2018</td>
+                                                <td title="TT" class="status">Duyệt</td>
+                                                <td>
+                                                    <div class="row center">
+                                                        <div class="group-btn text-center">
+                                                            <div class="row">
+                                                                <button type="button" class="btn btn-primary block">Chặn</button>
+                                                                <button type="button" class="btn btn-primary approval">Duyệt</button>
+                                                                <button type="button" data-target="#datepost" data-toggle="modal" class="btn btn-primary datepost">Đặt lịch</button>
+                                                            </div>
+                                                            <div class="row">
+                                                                <button type="button" data-target="#view" data-toggle="modal" class="btn btn-primary viewRow">Xem</button>
+                                                                <button type="button" data-target="#update" data-toggle="modal" class="btn btn-info updateRow">Sửa</button>
+                                                                <button type="button"  class="btn btn-danger delete">Xóa</button>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                    <!-- OPEN MODAL INSERT-->
+                                    <div id="insert" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title font-blue">nội dung bài viết</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-8" >
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Tiêu đề:</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <input  id="title_insert"  type="text" class="form-control" id="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Liên kết tĩnh:</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <a id="link_insert" href="">
+                                                                        
+                                                                    </a>
+                                                                   
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Danh mục:</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <input id="list_insert"  type="text" class="form-control" id="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Nội dung:</label>
+                                                                </div>
+                                                                <div class="col-md-8" style="width: 445px">
+                                                                    <textarea id="content_insert" rows="4" class="form-control" cols="50">
+                                                                    
+                                                                    </textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Lịch đăng:</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <div class="col-md-4">
+                                                                        Đăng ngay
+                                                                        <input type="radio" class="a" id="rad_post_insert">
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        
+                                                                        Đặt lịch
+                                                                        <input type="radio"  class="a" id="rad_post_after">
+                                                                        <input type="text" placeholder="dd/mm/yyyy" id="date_insert" >
+                                                                        <input hidden="" type="text" id="status_insert" >
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                            <button type="button" id="btn_post" class="btn btn-primary" >Đăng bài</button>
+                                                            <button type="button" id="btn_rs_insert" class="btn btn-warning">Reset</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                                                        </div>
+                                                        </div>                                             <div class="col-md-4">
+                                                        <div class="row">
+                                                            <label class="modal-title font-blue" style="text-align: center;" >thông tin bổ sung</label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <label >Email liên hệ:</label>
+                                                            <input type="text" id="email_insert" class="form-control" id="">
+                                                        </div>
+                                                        <div class="row">
+                                                            <label >Số điện thoại:</label>
+                                                            <input type="text" id="sdt_insert" class="form-control" id="">
+                                                        </div>
+                                                        <div class="row">
+                                                            <label >Thẻ đánh dấu:</label>
+                                                        </div>
+                                                        <div class="row tag">
+                                                            <div class="col-md-8 tag1">
+                                                                <input type="text" class="form-control" style="width: 200px" id="tag_insert">
+                                                            </div>
+                                                            <div class="col-md-2 tag-btn">
+                                                                <button type="button" id="btn_add_tag" class="btn btn-primary">Thêm</button>
+                                                            </div>                                                      <label style="margin-top: 10px">phân cách các thẻ bằng dấu phẩy(,)</label>        
+                                                        </div>
+                                                        <div  id="tagName">
+                                                             <span class="icon_tag_name"><i class="glyphicon glyphicon-remove-sign">tag 1</i>,
+                                                            </span>   
+                                                                                                           
+                                                        </div>
+                                                        </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END MODAL INSERT-->
+                              <!-- OPEN MODAL EDIT-->
+                                  <div id="update" class="modal fade" role="dialog">
+                                       <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title font-blue">nội dung bài viết</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-8" >
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Tiêu đề:</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <input id="title_update" type="text" class="form-control" id="">
+                                                                      <input id="id_update"  type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                             <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Liên kết tĩnh:</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <a id="link_update" href="">
+                                                                        
+                                                                    </a>
+                                                                   
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Danh mục:</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <input id="list_update"  type="text" class="form-control" id="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Nội dung:</label>
+                                                                </div>
+                                                                <div class="col-md-8" style="width: 445px">
+                                                                    <textarea id="content_update" rows="4" class="form-control" cols="50" >
+                                                                    
+                                                                    </textarea>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="modal-footer">
+                                                            <button type="button" id="btn_post_update" class="btn btn-primary" >lưu</button>
+                                                            <button type="button" id="btn_rs_update" class="btn btn-warning">Reset</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                                                        </div>
+                                                        </div>                                             <div class="col-md-4">
+                                                        <div class="row">
+                                                            <label class="modal-title font-blue" style="text-align: center;" >thông tin bổ sung</label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <label >Email liên hệ:</label>
+                                                            <input type="text" id="email_update" class="form-control" id="">
+                                                        </div>
+                                                        <div class="row">
+                                                            <label >Số điện thoại:</label>
+                                                            <input type="text" id="sdt_update" class="form-control" id="">
+                                                        </div>
+                                                          <div class="row">
+                                                            <label >Thẻ đánh dấu:</label>
+                                                        </div>
+                                                        <div class="row tag">
+                                                            <div class="col-md-8 tag1">
+                                                                <input type="text" class="form-control" style="width: 200px" id="tag_update">
+                                                            </div>
+                                                            <div class="col-md-2 tag-btn">
+                                                                <button type="button" id="btn_add_tag_up" class="btn btn-primary">Thêm</button>
+                                                            </div>                                                      <label style="margin-top: 10px">phân cách các thẻ bằng dấu phẩy(,)</label>        
+                                                        </div>
+                                                        <div  id="tagName_up">
+                                                             <span class="icon_tag_name"><i class="glyphicon glyphicon-remove-sign">tag 1</i>,
+                                                            </span>   
+                                                                                                           
+                                                        </div>
+                                                        </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END MODAL EDIT-->
+                            <!-- OPEN MODAL VIEW-->               
+                                     <div id="view" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title font-blue">nội dung bài viết</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-8" >
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Tiêu đề:</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <input id="title_view" readonly type="text" class="form-control" id="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Liên kết tĩnh:</label>
+                                                                </div>
+                                                                <div class="col-md-9">                                                                   
+                                                                    <a href="" id="link_view" ></a>
+                                                                </div>                                  
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Danh mục:</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <input id="list_view" readonly type="text" class="form-control" id="">
+                                                                </div>                               
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Nội dung:</label>
+                                                                </div>
+                                                                <div class="col-md-8" style="width: 445px">
+                                                                    <textarea id="content_view" readonly rows="4" class="form-control" cols="50">
+                                                                    
+                                                                    </textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label>Lịch đăng:</label>
+                                                                </div>
+                                                                 <div class="col-md-9">
+                                                                    <input id="date_view" readonly type="text" class="form-control" id="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                                                                 
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                                                        </div>
+                                                        </div>                                             <div class="col-md-4">
+                                                        <div class="row">
+                                                            <label class="modal-title font-blue" style="text-align: center;" >thông tin bổ sung</label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <label >Email liên hệ:</label>
+                                                            <input type="text" readonly="" id="email_view" class="form-control" id="">
+                                                        </div>
+                                                        <div class="row">
+                                                            <label >Số điện thoại:</label>
+                                                            <input type="text" readonly="" id="sdt_view" class="form-control" id="">
+                                                        </div>
+                                                         <div class="row">
+                                                            <label >Thẻ đánh dấu:</label>
+                                                            <input type="text" readonly="" class="form-control" id="">
+                                                        </div>
+                                                        </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END MODAL VIEW-->
+                            <!-- OPEN MODAL DELETE-->
+                            <div id="delete" class="modal fade" role="dialog">
+                                <div class="modal-dialog delete-modal">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title font-blue">Xóa bài viết</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row row-delete">
+                                                <div class="col-md-10">
+                                                    <label>Bạn có muốn xóa bài viết: <span>tiêu đề</span></label>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Có</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Không</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END MODAL DELETE-->
+                              <!-- OPEN MODAL DATEPOST-->
+                            <div id="datepost" class="modal fade" role="dialog">
+                                <div class="modal-dialog delete-modal">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title font-blue">Duyệt bài viết</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Lịch đăng:</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                     <input id="date_d"  type="text" class="form-control">
+                                                     <input id="id_date_posst"  type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" id="btn_date_post" class="btn btn-primary">Hẹn lịch</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END MODAL DATEPOST-->
+                            
+                        </div>
+                    </div>
+                </div>
+                <!--body List -->
+            </div>
+                            
+                <!-- Content main -->
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+        <!-- Bootstrap core JavaScript -->
+        
+    </body>
+</html>

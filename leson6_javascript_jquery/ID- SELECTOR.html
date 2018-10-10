@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ID SELECTOR</title>
+	<script src="jquery/jquery-3.3.1.min.js"></script> 
+	<!-- nếu file js nằm trong thư mục 
+	nếu nằm cùng foder xài thêm src="../jquery/jquery-3.3.1.min.js" -->
+
+	<script type="text/javascript">
+		$(function () {
+			$('#btn-click').click(function () {
+				alert("OK");
+				//cách viết javascript
+				//document.getElementById('btn-click').style.backgroundColor = "yellow"; // lấy ra đối tượng DOM (tài liệu html)
+				//cách viết jquery
+				$('#btn-click').css('background-color','yellow');
+			})
+
+		})
+		$(function () {
+			var button = $('#btn-click1'); // get ra đối tượng jq
+			// nếu có 2 id giống nhau nó sẽ chỉ áp dụng cho cái đầu tìm thấy
+			// hàm kiểm tra id có tồn tại không
+			if(button.length >0){
+				alert("element found");// có tìm thấy
+			}else{
+				alert("element not found"); // không tìm thấy
+			}
+
+			button.click(function () {
+				button.css('background','red');
+			}); 
+		})
+	</script>
+</head>
+<body>
+	<h1> SELECTOR</h1>
+	<p>SELECTOR: cho phép lấy ra đối tượng html và thao tác với nó remove, thêm css,....</p>
+	<p>Loại selector</p>
+	<ul>
+		<li>ID</li>
+		<li>tag name(thẻ p, thẻ a,..)</li>
+		<li>class name</li>
+		<li>attribute: thuộc tính thẻ</li>
+		<li>attribute value: giá trị thuộc tính thẻ</li>
+		<li>..................</li>
+	</ul>
+<hr>
+<h1>Ví dụ</h1>
+<button id="btn-click">click-yellow </button>
+<button id="btn-click1">click-red </button>
+</body>
+</html>

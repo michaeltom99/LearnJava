@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Javascript căn bản</title>
+		<script src="js.js"></script>
+		<script type="text/javascript">
+		// -------------Khai báo biến và đặt tên------------
+		var _tenBen;
+		var tenBen;
+		var x;
+		var X;
+		var enter = "<br>";
+		// khai báo bằng "var" và đặt tên chữ đầu viết thường các từ sau viết hoa chữ đầu k dùng gạch dưới. Có phân biệt chữ hoa chữ thường.
+		// -------------Khai báo biến và đặt tên------------
+		// -------------Kiểu dữ liệu------------
+		var str = "đây là kiểu tring";
+		alert(str);
+		document.write(str + enter); // in ra chuỗi	
+		var number = 2; //kiểu số
+		var boolean = true; // kiểu boolean
+		var array = new Array(); // kiểu mảng
+		array[0]= "phần tử 1";
+		array[1]="phần tử 2";
+		var person = {        // khai báo đối tượng
+				name: "Tom",
+				age: 20
+		}
+		//đối tượng 
+		var person =			
+		[
+			{
+				name:"Tom",
+				age:20
+			}
+			 ,
+			{
+				name:"Tom1",
+				age:22
+			}
+			
+		];
+		// khai báo chuỗi json
+		var person =			
+		[
+			{
+				"name":"Tom",
+				"age":"20"
+			}
+			 ,
+			{
+				"name":"Tom1",
+				"age":"22"
+			}
+			
+		];
+		// -------------toán tử------------	
+		// cộng || trừ || nhân || chia ||chia lấy dư || tăng || giảm
+		// +    || -   || *    ||   /  ||     %      || ++   || --
+		// so sánh băng || so sánh tuyệt đối || khác || lớn || nhỏ || lớn hơn or bằng||
+		// 		==      ||  	 ====		 || != 	 || >   || <   || 		>= 		 || 	
+		// -------------toán tử------------	
+		// ------------Vòng lặp------------	
+		// vòng lặp FOR	 
+		// for(giá trị bắt đầu;giá trị kết thúc;giá trị tăng vòng lặp) {}
+		var i;
+		for (i=0; i < 10; i++) {
+			
+		}
+		// vòng lặp while: thực hiện khối lệnh khi đk thỏa dừng lại khi đk k thỏa
+		// while(dk dừng){}
+		// vòng lặp do while tg tự while nhưng thực hiện khối lệnh 1 lần tr khi kiểm tra đk
+		// break thoát hẳn vòng lặp
+		// continue dừng vong lặp tại lúc đó nhảy sang i tiếp theo
+		// ------------Vòng lặp------------	
+		// ------------try catch throw------------	
+		try{
+				var x =5;
+				var y = "6";
+				var z = x +y;
+		}catch(e){
+				document.write(e);
+		}
+		//throw: viết lỗi chính xác
+		var n=0;
+		 try{
+		 	n="";
+		 	if (n=="") throw "Lỗi. n bằng rỗng ";
+		 	n= 1;
+			if (n==1) throw "Lỗi. n không bằng một được ";
+		}catch(e){
+
+		}
+		// ------------try catch throw------------
+		// ------------các đối tượng có sẵn js------------
+		// number, array, string, math, boolean, date, regexp, global
+		// ------------các đối tượng có sẵn js------------
+		//  ------------Hướng đối tượng js------------
+		//   ------------cách tạo đối tượng------------
+		//  3 cách tạo đối tượng
+		//  c1:
+		  	function ob1(){
+
+		  	} 
+		  	var myob1 = new ob1();
+		  	document.write("c1:"+ typeof myob1 + enter);
+		//  c2:cách này sử dựng nhiều
+			this.ob2 = function(){								
+			}
+		    var myob2 = new ob2();
+		    document.write("c2:"+ typeof myob2 + enter);		  
+		// c3: tạo đối tượng trực tiếp
+			var myob3 = {
+				
+			}
+			document.write("c3:"+ typeof myob3 + enter);
+			// tạo đối tượng trực tiếp rồi k cần tạo phần thể hiện cho nó nữa.
+			//------------cách tạo đối tượng------------
+			// ------------cách viết thuộc tính và phương thức đối tượng------------
+			this.ob22 = function(){
+				//thuộc tính
+				this.name = "TOM"; // khai báo thuộc tính trang thái public
+				this.age = 20;
+				var namePrivate = "Biến Private";
+				//phương thức get c1
+				// this.getName = function(){
+				// return this.name;
+				// }
+				//phương thức get c2: nên trình bày c2 
+				this.getName = 	getName;	//phường thức get
+				this.setName = 	setName;	//phuong thức set	
+				this.getNamePrivate	= getNamePrivate;
+				function getName() {
+					return this.name;	
+				}
+				function setName(name) {
+					this.name = name;	
+				}
+				function getNamePrivate() {
+					return namePrivate;
+				}
+				
+			}
+		    var myob22 = new ob22();
+		    document.write("Tên:"+ myob22.name + enter +"Tuổi:"+ myob22.age + enter);// khi khai báo biến public gọi trực tiếp
+		    document.write("Đây thuộc tính pivate:"+ myob22.getNamePrivate() + enter); // khi biến ở trang thái private thì phải gọi nó thông qua hàm getNamePrivate();
+			// ------------cách viết thuộc tính và phương thức đối tượng------------
+			// ------------kế thừa------------
+			this.ob4 = function() {
+				var val;
+				var val1;
+				this.ob4 = ob4;
+				this.getVal = getVal;
+				this.setVal = setVal;
+				this.getVal1 = getVal1;
+				this.setVal1 = setVal1;
+				function ob4(val,val1) {
+					this.val = val;
+					this.val1 =val1;
+				}
+				function getVal() {
+					return this.val;
+				}
+				function setVal(val) {
+					this.val = val;
+				}
+				function getVal1() {	
+					return this.val1;
+				}
+				function setVal1(val1) {
+					this.val1 = val1;
+				}
+			}
+			this.ob4Child = function () {
+				ob4.call(this);// như này ob4Child đã kế thừa ob4 và có thể sử dụng thuộc tính và phương thức của ob4
+			}
+			var myob4 = new ob4Child();	
+			myob4.ob4("string","string 2");		
+			// myob4.setVal("abc");
+			document.write(myob4.getVal() + enter);
+			document.write(myob4.getVal1() + enter);
+			//  ------------kế thừa------------
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Javascript căn bản</title>
+		<script src="js.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="jquery/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+		var mockData = [{
+		"ID": 1,
+		"Name": "Kevin",
+		"City": "Santa Clara",
+		"Address": "Longmen",
+		"Designation": "VP Marketing"
+		}, {
+		"ID": 2,
+		"Name": "Tina",
+		"City": "São Bartolomeu",
+		"Address": "Bojongloa",
+		"Designation": "Computer Systems Analyst III"
+		}, {
+		"ID": 3,
+		"Name": "Kevin",
+		"City": "Cilolohan",
+		"Address": "Tai’an",
+		"Designation": "Paralegal"
+		}];
+		function populateTable(object) {
+		var obj = object;
+		var table = $("<table />");
+				table[0].border = "1";
+				var columns = Object.keys(obj[0]);
+				var columnCount = columns.length;
+				var row = $(table[0].insertRow(-1));
+				for (var i = 0; i < columnCount; i++) {
+				var headerCell = $("<th />");
+						headerCell.html([columns[i]]);
+						row.append(headerCell);
+						}
+						for (var i = 0; i < obj.length; i++) {
+						row = $(table[0].insertRow(-1));
+						for (var j = 0; j < columnCount; j++) {
+						var cell = $("<td />");
+								cell.html(obj[i][columns[j]]);
+								row.append(cell);
+								}
+								}
+								
+								var dvTable = $("#dvCSV");
+								dvTable.html("");
+								dvTable.append(table);
+								}
+								populateTable(mockData);
+					</script>
+				</head>
+				<body>					
+					<div style="background: red" id="dvCSV">
+					</div>
+				</body>
+			</html>

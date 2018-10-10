@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery cơ bản: https://learn.jquery.com</title>
+	<!-- <script src="../jquery/jquery-js/jquery-3.3.1.js"></script> --> <!-- //file các hàm rõ để debug dễ -->
+	<!-- <script src="../jquery/jquery-3.3.1.min.js"></script>  --> <!-- //file nhẹ  -->
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> 
+	<!-- // Cách nhúng cdn nhưng cần mang internet mới chạy cách lấy lên trang chu jq vào dowlaod tìm đến cdn chọn microsoft hoặc các cái khác-->
+	
+	<script type="text/javascript">
+		// cách nhúng cdn nếu chết thì nhúng cái kia 
+		window.jquery || document.write("<script src="..\/jquery\/jquery-js\/jquery-3.3.1.js"><\/script>");
+	</script>
+	
+<script src="../jquery/jquery-js/jquery-3.3.1.js"></script> 
+	<script type="text/javascript">
+		//hàm nặc danh (Anonymous Function): hàm không có tên hàm
+		// $(document).ready(function () {
+			
+		// });
+		// // là sự kiện xảy ra đầu tiên khi (DOM)tải trang tr cả images,css,....
+		// $(window).load(function () {
+		// 	
+		// }); 
+		//được gọi khi tất cả các DOM và toàn bộ nội dung trang tải xong
+		//khi chưa có $(document).ready(); html tải tr nên không được bạn phải đê sau thẻ buton
+		$(document).ready(function () {
+			alert("$(document).ready");						
+		});
+		
+		//ví dụ sự kiện click 
+		$(document).ready(function () {
+				$('#btn1').click(function () {
+							alert("bạn đã click cách ready dài");
+						})			
+		});
+		//cách viết ngắn hơn		
+		$(function () {
+			$('#btn2').click(function () {
+							alert("bạn đã click cách ready ngắn");
+							$('#div1').html("body thẻ div");
+							$('.class1').html("class - body the"); 
+							
+						})	
+		});
+
+	</script>
+</head>
+<body>
+	<button id="btn1">click-viết dài</button>
+	<button id="btn2">click- ngắn</button>
+	<div id="div1"></div>
+	<div class="class1"></div>
+	<div class="class1"></div>
+	<a href="https://learn.jquery.com"> học jquery</a>
+	<!-- phải để sau nếu không sử dụng $(document).ready(); -->
+	<!-- <script type="text/javascript">
+		$(document).ready();// là sự kiện xảy ra đầu tiên khi (DOM)tải trang tr cả images,css,....
+		$(window).load //được gọi khi tất cả các DOM và toàn bộ nội dung trang tải xong
+		//khi chưa có $(document).ready(); html tải tr nên không được bạn đê sau thẻ buton
+		$('#btn1').click(function () {
+			alert("bạn đã click");
+		})
+
+	</script> -->
+</body>
+</html>

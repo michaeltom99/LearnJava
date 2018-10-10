@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>SELECTOR thẻ </title>
+		<script src="../jquery/jquery-js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				// // lấy tên thẻ table
+				// $('table').css('background-color','yellow');
+				// // lấy thẻ tr
+				// $('table tr').css('background-color','white');
+				// // lấy thẻ td tg tự viết css
+				// $('table tr td').css('background-color','blue');
+							// // lấy nhiều thẻ
+				// $('table,div,p').css('background-color','yellow');
+				// lấy thẻ tr chẵn (0 1 2 3 4) chọn tr 0 2
+				$('#table2 tr:even').css('background-color','yellow');
+				// even hay odd first, last,..gọi là mã giả
+				// lấy thẻ tr lẻ (0 1 2 3 4) chọn tr 1 3
+				$('#table2 tr:odd').css('background-color','red');
+				//lấy html thẻ tr
+				$('#table2 tr').each(function () { // lặp tất cả tr có trong table
+					//từ khóa this đại diện đối tượng tham chiếu element-('element')
+					//cụ thể ở đây gán cái tr vào biến this
+					// alert($(this).html());
+					
+					var kt =$(this).find('td:first').text(); // thông báo tr mà có thẻ td đầu có chữ c#
+					if( kt== 'C#'){
+						alert($(this).html());
+					}
+					
+				});
+		var list =[{"name": "TOM", "age": "18"},{"name": "TOM1", "age": "20"},{"name": "TOM2", "age": "21"}];
+		// function showList() {
+		
+			// 	var parent = $("#table1");
+			// 	var $form  = parent.find("tr")[0]; //lấy dòng đầu tiên
+			// 	var form = $($form).clone();//coppy clone
+			// 	$($form).remove();
+			// 	$.each(list,function(i,value) {
+					// 		$(form).clone().appendTo(parent);
+					// 		var index = parent.find("tr")[i];
+					// 		alert(value.name)
+					// 		// $('#name').text(value.name);
+					// 		$(index).find(".name").text(value.name);
+					// 		$(index).find(".age").text(value.age);
+			
+			// 	})
+		// };
+		// function showList() {
+		
+		// var parent = $("#table1");
+		// var $form  = parent.find("tr")[0]; //lấy dòng đầu tiên
+		// var form = $($form).clone();//coppy clone
+		// $($form).remove();
+		// $.each(list,function(i,value) {
+			// 	$(form).clone().appendTo(parent);
+			// 	var index = parent.find("tr")[i];
+			// 	$(index).find(".name").text(value.name);
+			// 	$(index).find(".age").text(value.age);
+			
+		// })
+		// };
+				function showList() {
+		
+		var parent = $("#table1");
+		var $form  = parent.find("tbody tr")[0]; //lấy dòng đầu tiên
+		var form = $($form).clone();//coppy clone
+		$($form).remove();
+		$.each(list,function(i,value) {
+			$(form).clone().appendTo(parent);
+			var index = parent.find("tbody tr")[i];
+			$(index).find(".name").text(value.name);
+			$(index).find(".age").text(value.age);
+			
+		})
+		};
+		showList();
+			});
+		</script>
+	</head>
+	<body>
+		<a href="https://learn.jquery.com/using-jquery-core/selecting-elements/"> selector thêm</a>
+		<div>fdsfdsfsd</div>
+		<p>dfsfsdfsdf</p>
+		<table id="table1" border="1">
+			<thead>
+				<tr>dsds</tr>
+				<tr>dsdsd</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="name">C#</td>
+					<td class="age">sadas</td>
+					
+				</tr>
+			</tbody>
+	
+	
+		</table>
+<br>
+<table id="table2" border="1">
+	<tr>
+		<td>C#</td>
+		<td>sadas</td>
+		<td>sadas</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>c#</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>sadas</td>
+		<td>sadas</td>
+		<td>sadas</td>
+	</tr>
+	<tr>
+		<td>đasa</td>
+		<td>sadas</td>
+		<td>sadas</td>
+	</tr>
+</table>
+</body>
+</html>
